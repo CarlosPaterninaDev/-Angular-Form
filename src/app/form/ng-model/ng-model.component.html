@@ -1,0 +1,122 @@
+<div class="row">
+  <div class="col-6">
+    <form #form="ngForm">
+      <div class="mb-3 mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="name@example.com"
+          name="email"
+          ngModel
+        />
+      </div>
+      <div class="mb-3 mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Example textarea</label
+        >
+        <textarea
+          required
+          placeholder="Nota: Campo marcado como required, ingrese valor para cambiar la validez del form"
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="4"
+          name="textarea"
+          ngModel
+        ></textarea>
+      </div>
+      <div class="mb-3 form-control mb-3">
+        <label class="form-label">Theme</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            id="flexRadioDefault1"
+            type="radio"
+            name="theme"
+            value="dark"
+            ngModel
+          />
+          <label class="form-check-label" for="flexRadioDefault1"> Dark </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="flexRadioDefault2"
+            name="theme"
+            value="light"
+            ngModel
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Light
+          </label>
+        </div>
+      </div>
+      <div class="mb-3 mb-3">
+        <select
+          name="ciudad"
+          class="form-select mb-3"
+          aria-label="Default select example"
+          value="ctg"
+          ngModel
+        >
+          <option value="ctg">Cartagena</option>
+          <option value="baq">Barranquilla</option>
+          <option value="sin">Sincelejo</option>
+        </select>
+      </div>
+
+      <div class="form-check mb-3 mb-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          name="check1"
+          ngModel
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Checkbox 1
+        </label>
+      </div>
+      <div class="form-check mb-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+          name="check2"
+          ngModel
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Checkbox 2
+        </label>
+      </div>
+
+      <div class="d-grid gap-2 d-md-block mb-3">
+        <button
+          [disabled]="form.invalid"
+          type="submit"
+          class="btn btn-primary btn-lg"
+        >
+          Ok
+        </button>
+        <button (click)="onBack()" class="btn btn-info btn-lg">Volver</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    <code>
+      <p>Modelo Form</p>
+      <pre>{{ form.value | json }}</pre>
+    </code>
+    <div>
+      <code [style.color]="form.valid ? 'green' : 'red'"
+        >Form Valid: {{ form.valid | json }}</code
+      >
+    </div>
+  </div>
+</div>
