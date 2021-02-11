@@ -1,0 +1,76 @@
+<h3>Validation Submitting Forms</h3>
+
+<div class="row">
+  <div class="col-6">
+    <form #form="ngForm" (ngSubmit)="onSumbit(form)">
+      <div class="mb-5">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Text Field ( #inputText : required, minlength="5")</label
+        >
+        <input
+          (blur)="onBlur(inputText)"
+          type="text"
+          [class.field-error]="form.submitted && inputText.invalid"
+          [class.field-ok]="form.submitted && inputText.valid"
+          class="form-control"
+          id="exampleFormControlInput1"
+          name="text"
+          ngModel
+          required
+          minlength="5"
+          #inputText="ngModel"
+        />
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <div class="mb-5">
+        <label for="exampleFormControlInput2" class="form-label"
+          >Number Field ( #inputNumber : requerid )
+        </label>
+        <input
+          [class.field-error]="form.submitted && inputNumber.invalid"
+          [class.field-ok]="form.submitted && inputNumber.valid"
+          
+          type="number"
+          class="form-control"
+          id="exampleFormControlInput2"
+          name="number"
+          ngModel
+          required
+          #inputNumber="ngModel"
+        />
+      </div>
+
+      <div class="d-grid gap-2 d-md-block mb-3">
+        <button type="submit" class="btn btn-primary btn-lg">Ok</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="loading" class="col-6">
+    <code>
+      <p>Input-text</p>
+      <pre>{{ inputText.valid }}</pre>
+    </code>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <code>
+      <p>Input-number</p>
+      <pre>{{ inputNumber.valid }}</pre>
+    </code>
+
+    <br />
+    <br />
+    <div>
+      <code [style.color]="form.valid ? 'green' : 'red'"
+        >Form Valid: {{ form.valid }}</code
+      >
+    </div>
+  </div>
+</div>

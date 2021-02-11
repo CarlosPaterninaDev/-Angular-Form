@@ -1,24 +1,199 @@
-<div class="card">
+<div id="ngmodel" class="card">
   <h5 class="card-header">ngModel</h5>
-  <div class="card-body">
-    <h5 class="card-title">Directiva necesaria: <br> &lt;form #form="ngForm"&gt;</h5>
+  <div  class="card-body">
+    <h5 class="card-title">
+      Directiva necesaria: <br />
+      &lt;form #form="ngForm"&gt;
+    </h5>
     <p class="card-text">Modulo: FormsModule</p>
-    <p class="card-text">Descripción: Se coloca la directiva en cada campo que queremos que Angular conozca, nos ayuda a construir el modelo del objeto del formulario. Se asocia con el atributo "name" de la entrada de datos</p>
-    <p>Esta directiva es muy beneficiosa si no se quiere rellenar el formulario al momento de cargar, de tal forma que la directiva ngModel trabaja de forma unidireccional en el template</p>
+    <p class="card-text">
+      Descripción: Se coloca la directiva en cada campo que queremos que Angular
+      conozca, nos ayuda a construir el modelo del objeto del formulario. Se
+      asocia con el atributo "name" de la entrada de datos
+    </p>
+    <p>
+      Esta directiva es muy beneficiosa si no se quiere rellenar el formulario
+      al momento de cargar, de tal forma que la directiva ngModel trabaja de
+      forma unidireccional en el template
+    </p>
     <p>Tip: Recopilación de información por primera vez</p>
     <a [routerLink]="['/ngmodel']" class="btn btn-primary">Go!</a>
   </div>
 </div>
 
-
-<div class="card">
+<div id="ngmodelTwo" class="card">
   <h5 class="card-header">[(ngModel)]</h5>
-  <div class="card-body">
-    <h5 class="card-title">Directiva necesaria: <br>  &lt;form #form="ngForm"&gt;</h5>
+  <div  class="card-body">
+    <h5 class="card-title">
+      Directiva necesaria: <br />
+      &lt;form #form="ngForm"&gt;
+    </h5>
     <p class="card-text">Modulo: FormsModule</p>
-    <p class="card-text">Descripción: Se coloca la directiva en cada campo que queremos que Angular conozca, nos ayuda a construir el modelo del objeto del formulario. Se asocia con el atributo "name" de la entrada de datos</p>
-    <p>Esta directiva es muy beneficiosa si no se quiere rellenar el formulario al momento de cargar, de tal forma que la directiva ngModel trabaja de forma unidireccional en el template</p>
+    <p class="card-text">
+      Descripción: Se coloca la directiva en cada campo que queremos que Angular
+      conozca, nos ayuda a construir el modelo del objeto del formulario. Se
+      asocia con el atributo "name" de la entrada de datos
+    </p>
+    <p>
+      Esta directiva es muy beneficiosa si no se quiere rellenar el formulario
+      al momento de cargar, de tal forma que la directiva ngModel trabaja de
+      forma unidireccional en el template
+    </p>
     <p>Tip: Recopilación de información por primera vez</p>
     <a [routerLink]="['/ngmodel-two-way']" class="btn btn-primary">Go!</a>
   </div>
 </div>
+
+<div id="ngNativeValidate" class="card">
+  <h5 class="card-header">Validation</h5>
+  <div class="card-body">
+    <h5 class="card-title">ngNativeValidate</h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">
+      Descripción: Permitirá que el navegador valide cada control
+    </p>
+    <p class="card-text">
+      Angular desactiva de manera predeterminada este comportamiento porque hay
+      muchas diferencias entre los distintos navegadores sobre como se muestran
+      los errores y como se corrigen
+    </p>
+    <a class="btn btn-primary" [routerLink]="['/validations']">Go!</a>
+  </div>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Validation Class</h5>
+  <div class="card-body">
+    <h5 class="card-title">
+      ng-untouched<br />
+      &lt;.ng-touched&gt;
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">Valor inicial: ng-untouched</p>
+    <p class="card-text">
+      Cuando el control pierde el focus se agrega de forma instantea la clase a
+      ng-touched y se elimina la clase ng-untouched
+    </p>
+    <a class="btn btn-primary">Go!</a>
+  </div>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Validation Class</h5>
+  <div class="card-body">
+    <h5 class="card-title">
+      ng-pristine<br />
+      &lt;.ng-dirty&gt;
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">Valor inicial: ng-pristine</p>
+    <p class="card-text">
+      El valor inicial indica que no ha sido modificado, una vez se modifique el
+      control se remueve la clase ng-pristine y se agrega la clase ng-dirty, por
+      lo tanto una clase ng-dirty solo significa que el campo ha sido modificado
+    </p>
+    <p class="card-text">
+      Una vez modificado el control, no volverá a ser pristine
+    </p>
+    <a class="btn btn-primary">Go!</a>
+  </div>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Validation Class</h5>
+  <div class="card-body">
+    <h5 class="card-title">
+      ng-valid<br />
+      &lt;.ng-invalid&gt;
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">
+      Valor inicial: Si estamos usando algun tipo de atributo para una
+      validación, Angular lo sabrá y mientras el campo sea válido tendrá como
+      clase ng-valid
+    </p>
+    <p class="card-text">
+      Si es valor el no válido, obtendremos ng-valid en su lugar
+    </p>
+    <a class="btn btn-primary">Go!</a>
+  </div>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Validation Styling Forms</h5>
+  <div id="styling" class="card-body">
+    <h5 class="card-title">
+      myPropety.valid || myPropety.untouched
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">
+      Valor inicial: Si estamos usando algun tipo de atributo para una
+      validación, Angular lo sabrá y mientras el campo sea válido tendrá como
+      clase ng-valid
+    </p>
+    <p class="card-text">
+      Si es valor el no válido, obtendremos ng-valid en su lugar
+    </p>
+    <a [routerLink]="['/validations-style']" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+
+<div  id="submiting" class="card">
+  <h5 class="card-header">Validation Submiting Forms</h5>
+  <div class="card-body">
+    <h5 class="card-title">
+      (ngSubmit)="onSubmit(form)"
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">
+      Valor inicial: Si estamos usando algun tipo de atributo para una
+      validación, Angular lo sabrá y mientras el campo sea válido tendrá como
+      clase ng-valid
+    </p>
+    <p class="card-text">
+      Si es valor el no válido, obtendremos ng-valid en su lugar
+    </p>
+    <a [routerLink]="['/validations-submit']" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Handling Form Control Events</h5>
+  <div class="card-body">
+    <h5 class="card-title">
+      (blur)
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">
+      Valor inicial: Si estamos usando algun tipo de atributo para una
+      validación, Angular lo sabrá y mientras el campo sea válido tendrá como
+      clase ng-valid
+    </p>
+    <p class="card-text">
+      Si es valor el no válido, obtendremos ng-valid en su lugar
+    </p>
+    <a [routerLink]="['/events']" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+
+
+
+<div id="http" class="card">
+  <h5 class="card-header">Form HTTP</h5>
+  <div class="card-body">
+    <h5 class="card-title">
+      http.post(url, data)
+    </h5>
+    <p class="card-text">Modulo: FormsModule</p>
+    <p class="card-text">
+      Valor inicial: Si estamos usando algun tipo de atributo para una
+      validación, Angular lo sabrá y mientras el campo sea válido tendrá como
+      clase ng-valid
+    </p>
+    <p class="card-text">
+      Si es valor el no válido, obtendremos ng-valid en su lugar
+    </p>
+    <a [routerLink]="['/form-http']" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+

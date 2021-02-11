@@ -1,11 +1,45 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['/home']">Angular Forms</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/ngmodel']">ngModel</a>
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/ngmodel-two-way']">([ngModel])</a>
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          href="#ngmodel"
+          >ngModel</a
+        >
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          href="#ngmodelTwo"
+          >([ngModel])</a
+        >
+        <li class="nav-item dropdown">
+          <a
+            routerLinkActive="active"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="true"
+          >
+            Validations
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#ngNativeValidate">Validation Class</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#styling">Styling Forms</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#submiting">Submiting Forms</a></li>
+          </ul>
+        </li>
+        <a
+        class="nav-link"
+        routerLinkActive="active"
+        href="#http"
+        >Form Http Service</a
+      >
       </div>
     </div>
   </div>
@@ -14,4 +48,3 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-

@@ -1,0 +1,111 @@
+<h3>Validation Styling Forms</h3>
+
+<div class="row">
+  <div class="col-6">
+    <form #form="ngForm" ngNativeValidate>
+      <div class="mb-5">
+        <label for="exampleFormControlInput1" class="form-label"
+          >My Propety ( #myPropety="ngModel" : required )</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          name="text"
+          ngModel
+          required
+          #myPropety="ngModel"
+        />
+        <div
+          [hidden]="myPropety.valid || myPropety.untouched"
+          class="alert alert-danger"
+        >
+          Enter a name
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div class="mb-5">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Text Field ( #inputText : required, minlength="5")</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          name="text"
+          ngModel
+          required
+          minlength="5"
+          #inputText
+        />
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <div class="mb-5">
+        <label for="exampleFormControlInput2" class="form-label"
+          >Number Field ( #inputNumber : min="20")
+        </label>
+        <input
+          type="number"
+          class="form-control"
+          id="exampleFormControlInput2"
+          name="number"
+          ngModel
+          min="20"
+          #inputNumber
+        />
+      </div>
+
+      <div class="d-grid gap-2 d-md-block mb-3">
+        <button type="submit" class="btn btn-primary btn-lg">Ok</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="loading" class="col-6">
+    <code>
+      <p>MyPropety</p>
+      <pre>dirty : {{ myPropety.dirty }}</pre>
+      <pre>pristine : {{ myPropety.pristine }}</pre>
+      <pre>valid : {{ myPropety.valid }}</pre>
+      <pre>invalid : {{ myPropety.invalid }}</pre>
+      <pre>touched : {{ myPropety.touched }}</pre>
+      <pre>untouched : {{ myPropety.untouched }}</pre>
+    </code>
+
+    <br />
+    <br />
+
+    <code>
+      <p>Input-text</p>
+      <pre>{{ inputText.className }}</pre>
+    </code>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <code>
+      <p>Input-number</p>
+      <pre>{{ inputNumber.className }}</pre>
+    </code>
+
+    <br />
+    <br />
+    <div>
+      <code [style.color]="form.valid ? 'green' : 'red'"
+        >Form Valid: {{ form.valid }}</code
+      >
+    </div>
+  </div>
+</div>

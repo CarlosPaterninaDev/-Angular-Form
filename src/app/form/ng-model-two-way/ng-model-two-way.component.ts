@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IngModel } from '../ng-model/ng-model';
+import { IngModel } from '../../data/ng-model';
 
 @Component({
   selector: 'app-ng-model-two-way',
